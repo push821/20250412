@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "微軟正黑體", sans-serif;
+  overflow: hidden; /* 防止滾動條出現 */
+}
+
+canvas#backgroundCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* 將畫布置於背景 */
+}
+
+ul#menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 15px; /* 選單項目之間的間距 */
+}
+
+ul#menu li {
+  position: relative; /* 為了定位子選單 */
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+ul#menu li:hover {
+  background-color: #0056b3;
+}
+
+ul#menu li .submenu {
+  display: none; /* 預設隱藏子選單 */
+  position: absolute;
+  top: 100%; /* 子選單顯示在主選單下方 */
+  left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #007bff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* 確保子選單顯示在最上層 */
+}
+
+ul#menu li:hover .submenu {
+  display: block; /* 滑鼠懸停時顯示子選單 */
+}
+
+ul#menu li .submenu li {
+  padding: 10px 20px;
+  white-space: nowrap; /* 防止文字換行 */
+}
+
+ul#menu li .submenu li:hover {
+  background-color: #87cdf9;
+}
+
+.content {
+  text-align: center;
+  margin-top: 50px;
+}
+
+iframe {
+  display: none; /* 預設隱藏 iframe */
+  width: 80%; /* 設置 iframe 寬度 */
+  height: 600px; /* 設置 iframe 高度 */
+  border: none;
+  background-color: transparent; /* 設置 iframe 背景透明 */
+  margin: 20px auto; /* 讓 iframe 水平居中 */
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>教學互動選單</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 背景畫布 -->
+  <canvas id="backgroundCanvas"></canvas>
+
+  <ul id="menu">
+    <li onclick="showContent('首頁')">首頁</li>
+    <li onclick="showContent('自我介紹')">自我介紹</li>
+    <li>
+      本學期作品集
+      <ul class="submenu">
+        <li onclick="showContent('第一周作品')">第一周作品</li>
+        <li onclick="showContent('第二周作品')">第二周作品</li>
+        <li onclick="showContent('第三周作品')">第三周作品</li>
+        <li onclick="showIframe('https://push77777.github.io/20250303/')">第四周作品</li>
+      </ul>
+    </li>
+    <li onclick="showContent('quiz')">測驗卷</li>
+    <li onclick="showContent('video')">教學影片</li>
+  </ul>
+
+  <div class="content" id="display">
+    <p>請點選上方選單觀看內容</p>
+  </div>
+
+  <!-- 用於嵌入第四周作品的 iframe -->
+  <iframe id="iframeDisplay" style="display: none; width: 80%; height: 600px; border: none; margin: 20px auto;"></iframe>
+
+  <script src="sketch.js"></script>
+</body>
+</html>
+<script src="background.js"></script>
